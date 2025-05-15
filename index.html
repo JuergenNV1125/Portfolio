@@ -13,6 +13,9 @@
     nav {
       background-color: #333;
       padding: 1em;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
     nav a {
       color: white;
@@ -24,6 +27,36 @@
     }
     section {
       padding: 2em;
+    }
+    .about-container {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 2em;
+    }
+    .about-container img {
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 100px;
+      background-color: #ccc;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5em;
+      margin-top: 2em;
+    }
+    .gallery-item {
+      border: 1px solid #ccc;
+      padding: 1em;
+      text-align: center;
+    }
+    .gallery-item img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      background-color: #eee;
     }
   </style>
 </head>
@@ -39,8 +72,13 @@
   </nav>
 
   <section id="about">
-    <h2>About</h2>
-    <p>I’m Juergen Hoehne, a Salesforce Architect and AWS student, building solutions that scale.</p>
+    <h2>About Me</h2>
+    <div class="about-container">
+      <img src="https://via.placeholder.com/200" alt="Profile Photo" />
+      <div>
+        <p>Hi, I'm Juergen Hoehne — a Salesforce Architect and technology consultant with 16+ years of experience in building CRM solutions, cloud integrations, and data-driven automation. I'm passionate about empowering businesses through technology, teaching others, and constantly learning new things like AWS and AI.</p>
+      </div>
+    </div>
   </section>
 
   <section id="youtube">
@@ -50,11 +88,23 @@
 
   <section id="projects">
     <h2>Projects</h2>
-    <ul>
-      <li>Salesforce CPQ Automation</li>
-      <li>Marketing Cloud Journey Builder Demos</li>
-      <li>Custom Portal with AWS Cognito + SFDC Integration</li>
-    </ul>
+    <div class="gallery">
+      <div class="gallery-item">
+        <img src="https://via.placeholder.com/300x150" alt="Project 1" />
+        <h3>Salesforce CPQ Automation</h3>
+        <p>Streamlined product bundling and pricing logic for enterprise quoting.</p>
+      </div>
+      <div class="gallery-item">
+        <img src="https://via.placeholder.com/300x150" alt="Project 2" />
+        <h3>Marketing Cloud Journeys</h3>
+        <p>Built cross-channel journeys using data extensions and Automation Studio.</p>
+      </div>
+      <div class="gallery-item">
+        <img src="https://via.placeholder.com/300x150" alt="Project 3" />
+        <h3>Custom Portal + AWS</h3>
+        <p>Built a secure self-service portal with Salesforce and AWS Cognito.</p>
+      </div>
+    </div>
   </section>
 
   <section id="contact">
